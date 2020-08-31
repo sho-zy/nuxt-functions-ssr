@@ -4,17 +4,14 @@
 
 ```bash
 # install dependencies
-$ yarn install
+$ yarn install && npm --prefix functions install
 
 # serve with hot reload at localhost:3000
 $ yarn dev
 
-# build for production and launch server
-$ yarn build
-$ yarn start
+# build and emulate with firebase
+$ yarn emulate
 
-# generate static project
-$ yarn generate
+# build and deploy to firebase
+$ yarn deploy
 ```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).

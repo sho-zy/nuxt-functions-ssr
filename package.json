@@ -4,13 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "nuxt-ts",
-    "build": "nuxt-ts build && rm -rf dist/* && cp -r static/* dist/ && cp -r .nuxt/dist/client/* dist/ && rm -rf functions/.nuxt && cp -R .nuxt functions/",
+    "build": "nuxt-ts build && rm -rf dist/* && cp -r static/* dist/ && cp -r .nuxt/dist/client/* dist/ && rm -rf functions/.nuxt && cp -R .nuxt functions/ && npm --prefix functions run build",
     "start": "nuxt-ts start",
     "generate": "nuxt-ts generate",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint:style": "stylelint **/*.{vue,css} --ignore-path .gitignore",
     "lint": "yarn lint:js && yarn lint:style",
-    "emulate": "firebase serve",
+    "emulate": "yarn build && firebase serve",
     "deploy": "yarn build && firebase deploy"
   },
   "dependencies": {

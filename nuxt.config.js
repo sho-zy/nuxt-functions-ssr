@@ -66,6 +66,6 @@ export default {
    ** See https://nuxtjs.org/api/configuration-build/
    */
   build: {
-    publicPath: '/',
+    publicPath: process.env.NODE_ENV === 'development' ? '/_nuxt/' : '/',
   },
 }
