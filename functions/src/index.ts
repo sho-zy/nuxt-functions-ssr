@@ -1,3 +1,4 @@
+import { Request, Response } from 'express'
 const functions = require('firebase-functions')
 const app = require('express')()
 const { Nuxt } = require('nuxt')
@@ -6,7 +7,7 @@ const nuxt = new Nuxt({
   buildDir: '.nuxt',
   build: { publicPath: '/' },
 })
-const handler = async (req, res) => {
+const handler = async (req: Request, res: Response) => {
   try {
     const { html } = await nuxt.renderRoute('/', { req })
     res.send(html)
